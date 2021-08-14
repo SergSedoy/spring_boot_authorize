@@ -1,0 +1,8 @@
+location /localhost/signin/ {
+	try_files nginx/html/index.html;
+}
+
+location / {
+	proxy_pass http://localhost:8080;
+}
+
