@@ -1,4 +1,4 @@
-location /localhost/signin/ {
+location /signin/ {
 	try_files nginx/html/index.html;
 }
 
