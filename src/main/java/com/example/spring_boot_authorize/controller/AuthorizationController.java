@@ -23,6 +23,17 @@ public class AuthorizationController {
         return service.getAuthorities(user, password);
     }
 
+    @GetMapping("/")
+    public String greeting(){
+        return "привет с сервера!!!";
+    }
+
+    @GetMapping("/hello")
+    public String greetingHello(){
+        String answer = greeting() + "на запрос hello";
+        return answer;
+    }
+
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> exceptionIC (InvalidCredentials ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
